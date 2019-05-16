@@ -2,19 +2,19 @@
 using FlexiMvvm.Bindings;
 using FlexiMvvm.Views;
 
-namespace NavigationFlow.iOS.Views.CustomFlow
+namespace BetweenTabsNavigation.iOS.Views.Tabs
 {
-    internal sealed class SecondViewController : BindableViewController<SecondTabViewModel>
+    internal sealed class SecondTabViewController : BindableViewController<SecondTabViewModel>
     {
-        public new SecondView View
+        public new SecondTabView View
         {
-            get => (SecondView)base.View;
+            get => (SecondTabView)base.View;
             set => base.View = value;
         }
 
         public override void LoadView()
         {
-            View = new SecondView();
+            View = new SecondTabView();
         }
 
         public override void Bind(BindingSet<SecondTabViewModel> bindingSet)

@@ -1,13 +1,12 @@
 ﻿using BetweenTabsNavigation.Core.Navigation;
 using BetweenTabsNavigation.Core.ViewModels;
 using BetweenTabsNavigation.Core.ViewModels.Tabs;
+using BetweenTabsNavigation.iOS.Views;
+using BetweenTabsNavigation.iOS.Views.Tabs;
 using FlexiMvvm.Navigation;
 using FlexiMvvm.ViewModels;
-using NavigationFlow.Core.ViewModels;
-using NavigationFlow.iOS.Views;
-using NavigationFlow.iOS.Views.CustomFlow;
 
-namespace NavigationFlow.iOS.Navigation
+namespace BetweenTabsNavigation.iOS.Navigation
 {
     internal sealed class AppNavigationService : NavigationService, INavigationService
     {
@@ -21,29 +20,20 @@ namespace NavigationFlow.iOS.Navigation
 
         public void NavigateToFirstPage(HomeViewModel fromViewModel)
         {
-            var homeViewController = NavigationViewProvider.GetViewController<HomeViewController, HomeViewModel>(fromViewModel);
-            var customFlowNavigationController = new CustomFlowNavigationController();
-            customFlowNavigationController.PushViewController(new FirstViewController(), false);
-
-            NavigateForResult<CustomFlowNavigationController, FlowResult>(
-                homeViewController,
-                customFlowNavigationController,
-                true,
-                NavigationStrategy.Forward.PresentViewController());
         }
 
         public void NavigateToSecondPage(FirstTabViewModel fromTabViewModel)
         {
-            var firstViewController = NavigationViewProvider.GetViewController<FirstViewController, FirstTabViewModel>(fromTabViewModel);
+            var firstViewController = NavigationViewProvider.GetViewController<FirstTabViewController, FirstTabViewModel>(fromTabViewModel);
 
-            firstViewController.NavigationController.PushViewController(new SecondViewController(), true);
+            firstViewController.NavigationController.PushViewController(new SecondTabViewController(), true);
         }
 
         public void NavigateToThirdPage(SecondTabViewModel fromTabViewModel)
         {
-            var secondViewController = NavigationViewProvider.GetViewController<SecondViewController, SecondTabViewModel>(fromTabViewModel);
+            var secondViewController = NavigationViewProvider.GetViewController<SecondTabViewController, SecondTabViewModel>(fromTabViewModel);
 
-            secondViewController.NavigationController.PushViewController(new ThirdViewController(), true);
+            secondViewController.NavigationController.PushViewController(new ThirdTabViewController(), true);
         }
 
         public void NavigateBack<TResult>(ILifecycleViewModelWithResult<TResult> fromViewModel, ResultCode resultCode, TResult result)
@@ -52,22 +42,6 @@ namespace NavigationFlow.iOS.Navigation
             var fromView = NavigationViewProvider.Get(fromViewModel);
 
             NavigateBack(fromView, resultCode, result, true);
-        }
-
-        public void NavigateBack(FirstTabViewModel fromTabViewModel, ResultCode resultCode, FlowResult result)
-        {
-            var firstViewController = NavigationViewProvider.GetViewController<FirstViewController, FirstTabViewModel>(fromTabViewModel);
-            var customFlowNavigationController = (CustomFlowNavigationController)firstViewController.NavigationController;
-
-            NavigateBack(customFlowNavigationController, resultCode, result, true);
-        }
-
-        public void NavigateBack(ThirdTabViewModel fromTabViewModel, ResultCode resultCode, FlowResult result)
-        {
-            var thirdViewController = NavigationViewProvider.GetViewController<ThirdViewController, ThirdTabViewModel>(fromTabViewModel);
-            var customFlowNavigationController = (CustomFlowNavigationController)thirdViewController.NavigationController;
-
-            NavigateBack(customFlowNavigationController, resultCode, result, true);
         }
     }
 }

@@ -1,12 +1,12 @@
 ﻿using BetweenTabsNavigation.Core.Bootstrapper;
+using BetweenTabsNavigation.iOS.Bootstrapper;
+using BetweenTabsNavigation.iOS.Views;
 using FlexiMvvm.Bootstrappers;
 using FlexiMvvm.Ioc;
 using Foundation;
-using NavigationFlow.iOS.Bootstrapper;
-using NavigationFlow.iOS.Views;
 using UIKit;
 
-namespace NavigationFlow.iOS
+namespace BetweenTabsNavigation.iOS
 {
     [Register("AppDelegate")]
     public class AppDelegate : UIApplicationDelegate

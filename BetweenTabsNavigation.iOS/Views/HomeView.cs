@@ -2,7 +2,7 @@
 using FlexiMvvm.Views;
 using UIKit;
 
-namespace NavigationFlow.iOS.Views
+namespace BetweenTabsNavigation.iOS.Views
 {
     internal sealed class HomeView : LayoutView
     {

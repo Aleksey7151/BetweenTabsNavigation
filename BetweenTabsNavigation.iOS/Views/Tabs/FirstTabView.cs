@@ -2,9 +2,9 @@
 using FlexiMvvm.Views;
 using UIKit;
 
-namespace NavigationFlow.iOS.Views.CustomFlow
+namespace BetweenTabsNavigation.iOS.Views.Tabs
 {
-    internal sealed class SecondView : LayoutView
+    internal sealed class FirstTabView : LayoutView
     {
         private UILabel HeaderLabel { get; set; }
 
@@ -16,7 +16,7 @@ namespace NavigationFlow.iOS.Views.CustomFlow
 
             BackgroundColor = UIColor.White;
 
-            HeaderLabel = new UILabel { Text = "Second" };
+            HeaderLabel = new UILabel {Text = "First"};
 
             NextButton = new UIButton(UIButtonType.System);
             NextButton.SetTitle("Go to next screen", UIControlState.Normal);

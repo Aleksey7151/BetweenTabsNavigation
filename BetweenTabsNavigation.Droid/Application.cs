@@ -2,11 +2,11 @@
 using Android.App;
 using Android.Runtime;
 using BetweenTabsNavigation.Core.Bootstrapper;
+using BetweenTabsNavigation.Droid.Bootstrapper;
 using FlexiMvvm.Bootstrappers;
 using FlexiMvvm.Ioc;
-using NavigationFlow.Droid.Bootstrapper;
 
-namespace NavigationFlow.Droid
+namespace BetweenTabsNavigation.Droid
 {
     [Application]
     public sealed class Application : Android.App.Application

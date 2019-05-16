@@ -1,6 +1,6 @@
 ﻿using UIKit;
 
-namespace NavigationFlow.iOS
+namespace BetweenTabsNavigation.iOS
 {
     public class Application
     {

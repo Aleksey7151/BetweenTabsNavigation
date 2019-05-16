@@ -1,8 +1,9 @@
-﻿using BetweenTabsNavigation.Core.Navigation;
+﻿using BetweenTabsNavigation.Core.Bootstrapper;
+using BetweenTabsNavigation.Core.Navigation;
+using BetweenTabsNavigation.iOS.Navigation;
 using FlexiMvvm.Bootstrappers;
-using NavigationFlow.iOS.Navigation;
 
-namespace NavigationFlow.iOS.Bootstrapper
+namespace BetweenTabsNavigation.iOS.Bootstrapper
 {
     internal sealed class IosBootstrapper : IBootstrapper
     {

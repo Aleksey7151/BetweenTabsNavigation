@@ -2,9 +2,9 @@
 using FlexiMvvm.Views;
 using UIKit;
 
-namespace NavigationFlow.iOS.Views.CustomFlow
+namespace BetweenTabsNavigation.iOS.Views.Tabs
 {
-    internal sealed class ThirdView : LayoutView
+    internal sealed class ThirdTabView : LayoutView
     {
         public UITextField ResultTextField { get; private set; }
 

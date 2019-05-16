@@ -1,9 +1,9 @@
 ﻿using BetweenTabsNavigation.Core.Bootstrapper;
 using BetweenTabsNavigation.Core.Navigation;
+using BetweenTabsNavigation.Droid.Navigation;
 using FlexiMvvm.Bootstrappers;
-using NavigationFlow.Droid.Navigation;
 
-namespace NavigationFlow.Droid.Bootstrapper
+namespace BetweenTabsNavigation.Droid.Bootstrapper
 {
     internal sealed class AndroidBootstrapper : IBootstrapper
     {

@@ -3,14 +3,13 @@ using Android.OS;
 using BetweenTabsNavigation.Core.ViewModels;
 using FlexiMvvm.Bindings;
 using FlexiMvvm.Views;
-using NavigationFlow.Core.ViewModels;
 
-namespace NavigationFlow.Droid.Views
+namespace BetweenTabsNavigation.Droid.Views
 {
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme")]
     internal sealed class HomeActivity : BindableAppCompatActivity<HomeViewModel>
     {
-        private HomeActivityViewHolder ViewHolder { get; set; }
+        //private HomeActivityViewHolder ViewHolder { get; set; }
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -18,18 +17,14 @@ namespace NavigationFlow.Droid.Views
 
             SetContentView(Resource.Layout.activity_home);
 
-            ViewHolder = new HomeActivityViewHolder(this);
+            //ViewHolder = new HomeActivityViewHolder(this);
         }
 
         public override void Bind(BindingSet<HomeViewModel> bindingSet)
         {
-            bindingSet.Bind(ViewHolder.ResultTextView)
-                .For(v => v.TextBinding())
-                .To(vm => vm.Result);
-
-            bindingSet.Bind(ViewHolder.NextButton)
+            /*bindingSet.Bind(ViewHolder.NextButton)
                 .For(v => v.ClickBinding())
-                .To(vm => vm.StartSeparateFlowCommand);
+                .To(vm => vm.StartSeparateFlowCommand);*/
         }
     }
 }

@@ -3,21 +3,21 @@ using FlexiMvvm.Bindings;
 using FlexiMvvm.Views;
 using UIKit;
 
-namespace NavigationFlow.iOS.Views.CustomFlow
+namespace BetweenTabsNavigation.iOS.Views.Tabs
 {
-    internal sealed class FirstViewController : BindableViewController<FirstTabViewModel>
+    internal sealed class FirstTabViewController : BindableViewController<FirstTabViewModel>
     {
         private UIBarButtonItem CloseButton { get; } = new UIBarButtonItem("Close", UIBarButtonItemStyle.Plain, null);
 
-        public new FirstView View
+        public new FirstTabView View
         {
-            get => (FirstView)base.View;
+            get => (FirstTabView)base.View;
             set => base.View = value;
         }
 
         public override void LoadView()
         {
-            View = new FirstView();
+            View = new FirstTabView();
         }
 
         public override void Bind(BindingSet<FirstTabViewModel> bindingSet)
@@ -27,10 +27,6 @@ namespace NavigationFlow.iOS.Views.CustomFlow
             bindingSet.Bind(View.NextButton)
                 .For(v => v.TouchUpInsideBinding())
                 .To(vm => vm.GoToNextCommand);
-
-            bindingSet.Bind(CloseButton)
-                .For(v => v.ClickedBinding())
-                .To(vm => vm.CloseFlowCommand);
         }
 
         public override void ViewWillAppear(bool animated)

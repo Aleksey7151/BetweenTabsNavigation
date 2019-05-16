@@ -59,13 +59,13 @@
     <Compile Include="Application.cs" />
     <Compile Include="Bootstrapper\AndroidBootstrapper.cs" />
     <Compile Include="Navigation\AppNavigationService.cs" />
-    <Compile Include="Views\CustomFlow\FirstActivity.cs" />
-    <Compile Include="Views\CustomFlow\SecondActivity.cs" />
-    <Compile Include="Views\CustomFlow\ThirdActivity.cs" />
     <Compile Include="Views\HomeActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\SplashScreenActivity.cs" />
+    <Compile Include="Views\Tabs\FirstTabFragment.cs" />
+    <Compile Include="Views\Tabs\SecondTabFragment.cs" />
+    <Compile Include="Views\Tabs\ThirdTabFragment.cs" />
     <Compile Include="Views\ViewHolderGenerator.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -117,13 +117,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\activity_first.axml">
+    <AndroidResource Include="Resources\layout\fragment_first_tab.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\activity_second.axml">
+    <AndroidResource Include="Resources\layout\fragment_second_tab.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\activity_third.axml">
+    <AndroidResource Include="Resources\layout\fragment_third_tab.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
     <Content Include="Views\ViewHolderGenerator.tt">

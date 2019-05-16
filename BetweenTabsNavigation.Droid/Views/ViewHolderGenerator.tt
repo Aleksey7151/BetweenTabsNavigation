@@ -11,7 +11,7 @@
 <#@ import namespace="System.Xml.Linq" #>
 <#
 // *********************** View Holders Generation Configuration **********************************
-    LayoutDefinitionOptions.Namespace = "NavigationFlow.Droid.Views";
+    LayoutDefinitionOptions.Namespace = "BetweenTabsNavigation.Droid.Views";
     LayoutDefinitionOptions.ViewTypeNameCustomFormat = new Dictionary<string, string>
     {
 		{ "bfla.droid.views.shared.SquareRelativeLayout", "BFLA.Droid.Views.Shared.SquareRelativeLayout" },
