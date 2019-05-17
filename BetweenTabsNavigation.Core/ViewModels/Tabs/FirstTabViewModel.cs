@@ -1,23 +1,26 @@
 ﻿using System.Windows.Input;
 using BetweenTabsNavigation.Core.Navigation;
+using BetweenTabsNavigation.Core.ViewModels.Details;
 using FlexiMvvm.ViewModels;
 
 namespace BetweenTabsNavigation.Core.ViewModels.Tabs
 {
-    public sealed class FirstTabViewModel : LifecycleViewModel
+    public sealed class FirstTabViewModel : LifecycleViewModel, ILifecycleViewModelWithResultHandler
     {
-        private readonly INavigationService _navigationService;
+        private string _result;
 
-        public FirstTabViewModel(INavigationService navigationService)
+        public string Result
         {
-            _navigationService = navigationService;
+            get => _result;
+            set => SetValue(ref _result, value);
         }
 
-        public ICommand GoToNextCommand => CommandProvider.Get(GoToNext);
-
-        private void GoToNext()
+        public void HandleResult(ResultCode resultCode, Result result)
         {
-            _navigationService.NavigateToSecondPage(this);
+            if (result is DetailsResult detailsResult)
+            {
+                Result = detailsResult.Value;
+            }
         }
     }
 }

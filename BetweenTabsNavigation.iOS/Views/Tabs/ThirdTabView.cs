@@ -6,11 +6,9 @@ namespace BetweenTabsNavigation.iOS.Views.Tabs
 {
     internal sealed class ThirdTabView : LayoutView
     {
-        public UITextField ResultTextField { get; private set; }
+        private UILabel HeaderLabel { get; set; }
 
-        public UIButton AcceptButton { get; private set; }
-
-        public UIButton DeclineButton { get; private set; }
+        public UIButton NextButton { get; private set; }
 
         protected override void SetupSubviews()
         {
@@ -18,26 +16,18 @@ namespace BetweenTabsNavigation.iOS.Views.Tabs
 
             BackgroundColor = UIColor.White;
 
-            ResultTextField = new UITextField
-            {
-                AccessibilityHint = "Enter result",
-                BackgroundColor = UIColor.Yellow
-            };
+            HeaderLabel = new UILabel { Text = "Third Tab" };
 
-            AcceptButton = new UIButton(UIButtonType.System);
-            AcceptButton.SetTitle("Accept", UIControlState.Normal);
-
-            DeclineButton = new UIButton(UIButtonType.System);
-            DeclineButton.SetTitle("Decline", UIControlState.Normal);
+            NextButton = new UIButton(UIButtonType.System);
+            NextButton.SetTitle("Open details page", UIControlState.Normal);
         }
 
         protected override void SetupLayout()
         {
             base.SetupLayout();
 
-            this.AddLayoutSubview(ResultTextField)
-                .AddLayoutSubview(AcceptButton)
-                .AddLayoutSubview(DeclineButton);
+            this.AddLayoutSubview(HeaderLabel)
+                .AddLayoutSubview(NextButton);
         }
 
         protected override void SetupLayoutConstraints()
@@ -47,17 +37,12 @@ namespace BetweenTabsNavigation.iOS.Views.Tabs
             this.SubviewsDoNotTranslateAutoresizingMaskIntoConstraints();
 
             this.AddConstraints(
-                ResultTextField.AtLeftOf(this, 24),
-                ResultTextField.AtRightOf(this, 24),
-                ResultTextField.WithSameCenterY(this));
+                HeaderLabel.WithSameCenterX(this),
+                HeaderLabel.WithSameCenterY(this));
 
             this.AddConstraints(
-                AcceptButton.Below(ResultTextField, 24),
-                AcceptButton.WithSameCenterX(this));
-
-            this.AddConstraints(
-                DeclineButton.Below(AcceptButton, 24),
-                DeclineButton.WithSameCenterX(this));
+                NextButton.Below(HeaderLabel, 24),
+                NextButton.WithSameCenterX(this));
         }
     }
 }

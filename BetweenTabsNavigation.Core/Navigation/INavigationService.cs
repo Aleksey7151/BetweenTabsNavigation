@@ -1,5 +1,4 @@
 ﻿using BetweenTabsNavigation.Core.ViewModels;
-using BetweenTabsNavigation.Core.ViewModels.Tabs;
 
 namespace BetweenTabsNavigation.Core.Navigation
 {
@@ -7,10 +6,10 @@ namespace BetweenTabsNavigation.Core.Navigation
     {
         void NavigateToHome(EntryViewModel fromViewModel);
 
-        void NavigateToFirstPage(HomeViewModel fromViewModel);
+        void NavigateToFirstTab(BottomTabBarViewModel fromViewModel, bool isDefault);
 
-        void NavigateToSecondPage(FirstTabViewModel fromTabViewModel);
+        void NavigateToSecondTab(BottomTabBarViewModel fromViewModel, bool isDefault);
 
-        void NavigateToThirdPage(SecondTabViewModel fromTabViewModel);
+        void NavigateToThirdTab(BottomTabBarViewModel fromViewModel, bool isDefault);
     }
 }

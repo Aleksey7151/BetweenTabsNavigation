@@ -17,7 +17,6 @@ namespace BetweenTabsNavigation.Core.ViewModels.Tabs
 
         private void GoToNext()
         {
-            _navigationService.NavigateToThirdPage(this);
         }
     }
 }

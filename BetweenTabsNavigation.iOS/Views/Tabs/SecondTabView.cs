@@ -16,7 +16,7 @@ namespace BetweenTabsNavigation.iOS.Views.Tabs
 
             BackgroundColor = UIColor.White;
 
-            HeaderLabel = new UILabel { Text = "Second" };
+            HeaderLabel = new UILabel { Text = "Second Tab" };
 
             NextButton = new UIButton(UIButtonType.System);
             NextButton.SetTitle("Go to next screen", UIControlState.Normal);

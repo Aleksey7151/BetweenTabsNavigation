@@ -7,7 +7,7 @@ using FlexiMvvm.Views;
 namespace BetweenTabsNavigation.Droid.Views
 {
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme")]
-    internal sealed class HomeActivity : BindableAppCompatActivity<HomeViewModel>
+    internal sealed class HomeActivity : BindableAppCompatActivity<BottomTabBarViewModel>
     {
         //private HomeActivityViewHolder ViewHolder { get; set; }
 
@@ -20,7 +20,7 @@ namespace BetweenTabsNavigation.Droid.Views
             //ViewHolder = new HomeActivityViewHolder(this);
         }
 
-        public override void Bind(BindingSet<HomeViewModel> bindingSet)
+        public override void Bind(BindingSet<BottomTabBarViewModel> bindingSet)
         {
             /*bindingSet.Bind(ViewHolder.NextButton)
                 .For(v => v.ClickBinding())

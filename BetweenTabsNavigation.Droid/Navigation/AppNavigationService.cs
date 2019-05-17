@@ -15,7 +15,7 @@ namespace BetweenTabsNavigation.Droid.Navigation
             Navigate<HomeActivity>(fromView);
         }
 
-        public void NavigateToFirstPage(HomeViewModel fromViewModel)
+        public void NavigateToFirstPage(BottomTabBarViewModel fromViewModel)
         {
         }
 

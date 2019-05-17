@@ -66,11 +66,6 @@
     <Compile Include="Views\Tabs\FirstTabFragment.cs" />
     <Compile Include="Views\Tabs\SecondTabFragment.cs" />
     <Compile Include="Views\Tabs\ThirdTabFragment.cs" />
-    <Compile Include="Views\ViewHolderGenerator.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ViewHolderGenerator.tt</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -126,10 +121,6 @@
     <AndroidResource Include="Resources\layout\fragment_third_tab.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <Content Include="Views\ViewHolderGenerator.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ViewHolderGenerator.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

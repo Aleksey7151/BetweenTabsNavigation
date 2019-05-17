@@ -8,7 +8,7 @@ namespace BetweenTabsNavigation.iOS.Views.Tabs
     {
         private UILabel HeaderLabel { get; set; }
 
-        public UIButton NextButton { get; private set; }
+        public UILabel ResultLabel { get; private set; }
 
         protected override void SetupSubviews()
         {
@@ -16,10 +16,9 @@ namespace BetweenTabsNavigation.iOS.Views.Tabs
 
             BackgroundColor = UIColor.White;
 
-            HeaderLabel = new UILabel {Text = "First"};
+            HeaderLabel = new UILabel { Text = "Home screen" };
 
-            NextButton = new UIButton(UIButtonType.System);
-            NextButton.SetTitle("Go to next screen", UIControlState.Normal);
+            ResultLabel = new UILabel();
         }
 
         protected override void SetupLayout()
@@ -27,7 +26,7 @@ namespace BetweenTabsNavigation.iOS.Views.Tabs
             base.SetupLayout();
 
             this.AddLayoutSubview(HeaderLabel)
-                .AddLayoutSubview(NextButton);
+                .AddLayoutSubview(ResultLabel);
         }
 
         protected override void SetupLayoutConstraints()
@@ -41,8 +40,8 @@ namespace BetweenTabsNavigation.iOS.Views.Tabs
                 HeaderLabel.WithSameCenterY(this));
 
             this.AddConstraints(
-                NextButton.Below(HeaderLabel, 24),
-                NextButton.WithSameCenterX(this));
+                ResultLabel.Below(HeaderLabel, 24),
+                ResultLabel.WithSameCenterX(this));
         }
     }
 }

@@ -1,10 +1,8 @@
 ﻿using BetweenTabsNavigation.Core.Navigation;
 using BetweenTabsNavigation.Core.ViewModels;
-using BetweenTabsNavigation.Core.ViewModels.Tabs;
 using BetweenTabsNavigation.iOS.Views;
 using BetweenTabsNavigation.iOS.Views.Tabs;
 using FlexiMvvm.Navigation;
-using FlexiMvvm.ViewModels;
 
 namespace BetweenTabsNavigation.iOS.Navigation
 {
@@ -13,35 +11,27 @@ namespace BetweenTabsNavigation.iOS.Navigation
         public void NavigateToHome(EntryViewModel fromViewModel)
         {
             var rootNavigationController = NavigationViewProvider.GetViewController<RootNavigationController, EntryViewModel>(fromViewModel);
-            var homeViewController = new HomeViewController();
+            var homeViewController = new BottomTabBarViewController();
 
             Navigate(rootNavigationController, homeViewController, true);
         }
 
-        public void NavigateToFirstPage(HomeViewModel fromViewModel)
+        public void NavigateToFirstTab(BottomTabBarViewModel fromViewModel, bool isDefault)
         {
+            var hostView = NavigationViewProvider.GetViewController<BottomTabBarViewController, BottomTabBarViewModel>(fromViewModel);
+            hostView.SetContent(hostView.FirstTabNavigationController, () => new FirstTabViewController());
         }
 
-        public void NavigateToSecondPage(FirstTabViewModel fromTabViewModel)
+        public void NavigateToSecondTab(BottomTabBarViewModel fromViewModel, bool isDefault)
         {
-            var firstViewController = NavigationViewProvider.GetViewController<FirstTabViewController, FirstTabViewModel>(fromTabViewModel);
-
-            firstViewController.NavigationController.PushViewController(new SecondTabViewController(), true);
+            var hostView = NavigationViewProvider.GetViewController<BottomTabBarViewController, BottomTabBarViewModel>(fromViewModel);
+            hostView.SetContent(hostView.SecondTabNavigationController, () => new SecondTabViewController());
         }
 
-        public void NavigateToThirdPage(SecondTabViewModel fromTabViewModel)
+        public void NavigateToThirdTab(BottomTabBarViewModel fromViewModel, bool isDefault)
         {
-            var secondViewController = NavigationViewProvider.GetViewController<SecondTabViewController, SecondTabViewModel>(fromTabViewModel);
-
-            secondViewController.NavigationController.PushViewController(new ThirdTabViewController(), true);
-        }
-
-        public void NavigateBack<TResult>(ILifecycleViewModelWithResult<TResult> fromViewModel, ResultCode resultCode, TResult result)
-            where TResult : Result
-        {
-            var fromView = NavigationViewProvider.Get(fromViewModel);
-
-            NavigateBack(fromView, resultCode, result, true);
+            var hostView = NavigationViewProvider.GetViewController<BottomTabBarViewController, BottomTabBarViewModel>(fromViewModel);
+            hostView.SetContent(hostView.ThirdTabNavigationController, () => new ThirdTabViewController());
         }
     }
 }
