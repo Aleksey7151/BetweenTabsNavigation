@@ -1,4 +1,5 @@
-﻿using BetweenTabsNavigation.Core.Navigation;
+﻿using System.Windows.Input;
+using BetweenTabsNavigation.Core.Navigation;
 using FlexiMvvm.ViewModels;
 
 namespace BetweenTabsNavigation.Core.ViewModels.Tabs
@@ -10,6 +11,13 @@ namespace BetweenTabsNavigation.Core.ViewModels.Tabs
         public ThirdTabViewModel(INavigationService navigationService)
         {
             _navigationService = navigationService;
+        }
+
+        public ICommand OpenDetailsCommand => CommandProvider.Get(OpenDetails);
+
+        private void OpenDetails()
+        {
+            _navigationService.NavigateToDetails(this);
         }
     }
 }

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Linq;
 using BetweenTabsNavigation.Core.ViewModels;
-using FlexiMvvm.Bindings;
 using FlexiMvvm.Views;
 using UIKit;
 
@@ -43,6 +42,13 @@ namespace BetweenTabsNavigation.iOS.Views
 
             ShouldSelectViewController = ShouldSetContent;
             this.ViewControllerSelectedWeakSubscribe(BottomTabBarViewController_ViewControllerSelected);
+        }
+
+        public override void ViewWillAppear(bool animated)
+        {
+            base.ViewWillAppear(animated);
+
+            NavigationController.NavigationBarHidden = true;
         }
 
         public void SetContent(NavigationController tabNavigationController, Func<ViewController> tabContentViewControllerFactory)

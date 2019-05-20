@@ -4,10 +4,15 @@ namespace BetweenTabsNavigation.Core.ViewModels.Details
 {
     public sealed class DetailsResult : Result
     {
+        public DetailsResult(string value)
+        {
+            Value = value;
+        }
+
         public string Value
         {
             get => Bundle.GetString();
-            set => Bundle.SetString(value);
+            private set => Bundle.SetString(value);
         }
     }
 }

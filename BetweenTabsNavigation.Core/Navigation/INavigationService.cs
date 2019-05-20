@@ -1,4 +1,6 @@
 ﻿using BetweenTabsNavigation.Core.ViewModels;
+using BetweenTabsNavigation.Core.ViewModels.Details;
+using BetweenTabsNavigation.Core.ViewModels.Tabs;
 
 namespace BetweenTabsNavigation.Core.Navigation
 {
@@ -11,5 +13,9 @@ namespace BetweenTabsNavigation.Core.Navigation
         void NavigateToSecondTab(BottomTabBarViewModel fromViewModel, bool isDefault);
 
         void NavigateToThirdTab(BottomTabBarViewModel fromViewModel, bool isDefault);
+
+        void NavigateToDetails(ThirdTabViewModel fromViewModel);
+
+        void NavigateToFirstTabWithResult(DetailsViewModel fromViewModel, DetailsResult result);
     }
 }

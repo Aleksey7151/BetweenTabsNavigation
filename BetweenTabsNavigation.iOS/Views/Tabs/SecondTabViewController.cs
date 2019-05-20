@@ -1,5 +1,4 @@
 ﻿using BetweenTabsNavigation.Core.ViewModels.Tabs;
-using FlexiMvvm.Bindings;
 using FlexiMvvm.Views;
 
 namespace BetweenTabsNavigation.iOS.Views.Tabs
@@ -15,15 +14,6 @@ namespace BetweenTabsNavigation.iOS.Views.Tabs
         public override void LoadView()
         {
             View = new SecondTabView();
-        }
-
-        public override void Bind(BindingSet<SecondTabViewModel> bindingSet)
-        {
-            base.Bind(bindingSet);
-
-            bindingSet.Bind(View.NextButton)
-                .For(v => v.TouchUpInsideBinding())
-                .To(vm => vm.GoToNextCommand);
         }
     }
 }

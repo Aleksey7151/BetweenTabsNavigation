@@ -16,7 +16,7 @@ namespace BetweenTabsNavigation.iOS.Views.Tabs
 
             BackgroundColor = UIColor.White;
 
-            HeaderLabel = new UILabel { Text = "Home screen" };
+            HeaderLabel = new UILabel { Text = "First Tab" };
 
             ResultLabel = new UILabel();
         }

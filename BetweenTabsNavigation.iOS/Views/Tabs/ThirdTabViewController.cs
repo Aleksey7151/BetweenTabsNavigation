@@ -20,6 +20,10 @@ namespace BetweenTabsNavigation.iOS.Views.Tabs
         public override void Bind(BindingSet<ThirdTabViewModel> bindingSet)
         {
             base.Bind(bindingSet);
+
+            bindingSet.Bind(View.NextButton)
+                .For(v => v.TouchUpInsideBinding())
+                .To(vm => vm.OpenDetailsCommand);
         }
     }
 }

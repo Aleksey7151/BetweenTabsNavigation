@@ -23,6 +23,7 @@ namespace BetweenTabsNavigation.Core.ViewModels.Details
 
         private void Accept()
         {
+            _navigationService.NavigateToFirstTabWithResult(this, new DetailsResult(Result));
         }
     }
 }
